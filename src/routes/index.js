@@ -1,6 +1,6 @@
 import Users from '../controllers/User';
 import emailCheck from '../middlewares/EmailCheck';
-import UserValidator from "../middlewares/ValidateSignUp"
+import UserValidator from "../middlewares/ValidateUser"
 
 export default (app) => {
 
@@ -10,4 +10,5 @@ export default (app) => {
 
     // API route for user to signup
     app.post('/api/v1/auth/signup', UserValidator.userSignUpValidator, emailCheck, Users.signUp); 
+    app.post('/api/v1/auth/signin', Users.signIn)
 };

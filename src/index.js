@@ -20,6 +20,7 @@ app.get('/*', (req, res) => res.status(200).send({
     message: 'Route not found',
 }));
 const port = process.env.PORT || 3000
+
 app.listen(port, () => {
     console.log(`Save me listening on ${port}`)
 })

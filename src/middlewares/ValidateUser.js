@@ -11,11 +11,12 @@ class UserValidator {
         const result = Joi.validate({ fullname: req.body.fullname, email: req.body.email, password: req.body.password }, schema);
         if (result.error != null) {
             res.status(422).json({
-                message: result.error.details[0].message
+                message: result
             })
             return
         }
         next()
     }
+
 }
 export default UserValidator
